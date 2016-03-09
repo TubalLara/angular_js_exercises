@@ -1,0 +1,6 @@
+﻿ [
+                { "tarea": "Recoger coche", "hecha": false },
+                { "tarea": "Llamar pepe", "hecha": true },
+                { "tarea": "Reservar mesa", "hecha": false },
+                { "tarea": "Comprar", "hecha": false }
+            ]

@@ -1,0 +1,9 @@
+c:\users\arranque2\documents\visual studio 2013\Projects\AngularJS\Componentes\bin\Componentes.dll.config
+c:\users\arranque2\documents\visual studio 2013\Projects\AngularJS\Componentes\bin\Componentes.dll
+c:\users\arranque2\documents\visual studio 2013\Projects\AngularJS\Componentes\bin\Componentes.pdb
+c:\users\arranque2\documents\visual studio 2013\Projects\AngularJS\Componentes\bin\Componentes.xml
+c:\users\arranque2\documents\visual studio 2013\Projects\AngularJS\Componentes\obj\Debug\Componentes.Resources.resources
+c:\users\arranque2\documents\visual studio 2013\Projects\AngularJS\Componentes\obj\Debug\Componentes.vbproj.GenerateResource.Cache
+c:\users\arranque2\documents\visual studio 2013\Projects\AngularJS\Componentes\obj\Debug\Componentes.dll
+c:\users\arranque2\documents\visual studio 2013\Projects\AngularJS\Componentes\obj\Debug\Componentes.xml
+c:\users\arranque2\documents\visual studio 2013\Projects\AngularJS\Componentes\obj\Debug\Componentes.pdb
