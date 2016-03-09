@@ -1,0 +1,9 @@
+C:\Users\Arranque2\documents\visual studio 2013\Projects\AngularJS\Estructura\bin\Estructura.dll.config
+C:\Users\Arranque2\documents\visual studio 2013\Projects\AngularJS\Estructura\bin\Estructura.dll
+C:\Users\Arranque2\documents\visual studio 2013\Projects\AngularJS\Estructura\bin\Estructura.pdb
+C:\Users\Arranque2\documents\visual studio 2013\Projects\AngularJS\Estructura\bin\Estructura.xml
+C:\Users\Arranque2\documents\visual studio 2013\Projects\AngularJS\Estructura\obj\Debug\Estructura.Resources.resources
+C:\Users\Arranque2\documents\visual studio 2013\Projects\AngularJS\Estructura\obj\Debug\Estructura.vbproj.GenerateResource.Cache
+C:\Users\Arranque2\documents\visual studio 2013\Projects\AngularJS\Estructura\obj\Debug\Estructura.dll
+C:\Users\Arranque2\documents\visual studio 2013\Projects\AngularJS\Estructura\obj\Debug\Estructura.xml
+C:\Users\Arranque2\documents\visual studio 2013\Projects\AngularJS\Estructura\obj\Debug\Estructura.pdb

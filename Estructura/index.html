@@ -1,13 +1,42 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="estructuraApp">
 <head>
     <title>Estructura principales componentes AngularJS</title>
     <link href="styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="styles/bootstrap-theme.min.css" rel="stylesheet" />
 </head>
 <body>
-
+    <div class="panel" >
+        <div class="page-header">
+            <h3>Estructura AngularJS</h3>
+        </div>
+        <h4 ng-controller="struCtrl">Hoy es {{dia || "desconocido"}}</h4>
+        <h4 ng-controller="struCtrl">Mañana será {{sig || "desconocido"}}</h4>
+    </div>
 
 
     <script src="scripts/angular.min.js"></script>
+    <script>
+        /*
+            AngularJS es Fluent API
+            angular.module("estructuraApp", []);
+        */
+
+        //Primer parámetro nombre
+        //Primer parámetro array de dependencias
+        //Primer parámetro configuración del módulo(equivalente a método config())
+        var myApp = angular.module("estructuraApp", [])
+
+        //Primer parámetro nombre
+        //Segundo parámetro función de creación del controlador
+        //tantos argumentos como servicios (componentes) necesite
+        myApp.controller("struCtrl", function ($scope) {
+
+            var diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Sábado"];
+
+            $scope.dia = diasSemana[new Date().getDay()];
+            $scope.sig = diasSemana[(new Date().getDay() + 1) % 7];
+        });
+    </script>
 </body>
 </html>
