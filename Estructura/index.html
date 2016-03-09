@@ -10,8 +10,8 @@
         <div class="page-header">
             <h3>Estructura AngularJS</h3>
         </div>
-        <h4 ng-controller="struCtrl">Hoy es {{dia || "desconocido"}}</h4>
-        <h4 ng-controller="struCtrl">Mañana será {{sig || "desconocido"}}</h4>
+        <h4 ng-controller="struCtrl" resaltar="Miércoles">Hoy es {{dia || "desconocido"}}</h4>
+        <h4 ng-controller="stru2Ctrl">Mañana será {{dia || "desconocido"}}</h4>
     </div>
 
 
@@ -35,7 +35,29 @@
             var diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Sábado"];
 
             $scope.dia = diasSemana[new Date().getDay()];
-            $scope.sig = diasSemana[(new Date().getDay() + 1) % 7];
+            
+        });
+
+        myApp.controller("stru2Ctrl", function ($scope) {
+
+            var diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Sábado"];
+
+            
+            $scope.dia = diasSemana[(new Date().getDay() + 1) % 7];
+        });
+
+        //Es una función de factoría -> func que devuelve un objeto creado desde una segunda función(func worker)
+        myApp.directive("resaltar", function () {
+
+            //func worker
+            ///Primer parámetro scope donde esta la directiva
+            //Segundo parámetro jqLite (versión funcional muy reducida del objeto jQuery)
+            //Tercer parámetro son los atributos de la vista
+            return function (scope, element, attribute) {
+                if (scope.dia === attribute["resaltar"]) {
+                    element.css("color", "red");
+                }
+            };
         });
     </script>
 </body>
