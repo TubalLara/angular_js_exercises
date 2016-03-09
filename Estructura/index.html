@@ -10,12 +10,17 @@
         <div class="page-header">
             <h3>Estructura AngularJS</h3>
         </div>
-        <h4 ng-controller="struCtrl" resaltar="Miércoles">Hoy es {{dia || "desconocido"}}</h4>
-        <h4 ng-controller="stru2Ctrl">Mañana será {{dia || "desconocido"}}</h4>
+        <h4 ng-controller="struCtrl" resaltar="Miércoles">Hoy es {{dia || "desconocido" | nombreDia}}</h4>
+        <h4 ng-controller="struCtrl">Hoy es {{5 || "desconocido" | nombreDia}}</h4>
+        <h4 ng-controller="stru2Ctrl">Mañana será {{dia || "desconocido" | nombreDia}}</h4>
     </div>
 
 
     <script src="scripts/angular.min.js"></script>
+    <script src="scripts/controladores.js"></script>
+    <script src="scripts/filtros.js"></script>
+    <script src="scripts/directivas.js"></script>
+    <script src="scripts/servicios.js"></script>
     <script>
         /*
             AngularJS es Fluent API
@@ -25,40 +30,17 @@
         //Primer parámetro nombre
         //Primer parámetro array de dependencias
         //Primer parámetro configuración del módulo(equivalente a método config())
-        var myApp = angular.module("estructuraApp", [])
+        var myApp = angular.module("estructuraApp", ["estructuraApp.Controladores",
+        "estructuraApp.Filtros", "estructuraApp.Directivas", "estructuraApp.Servicios"]);
 
+        var ahora = new Date();
+
+        //crear servicio que devuelve un valor u objeto constante o fijo
         //Primer parámetro nombre
-        //Segundo parámetro función de creación del controlador
-        //tantos argumentos como servicios (componentes) necesite
-        myApp.controller("struCtrl", function ($scope) {
+        //Segundo parámetro valor u objeto asignado
+        myApp.value("valorAhora", ahora);
 
-            var diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Sábado"];
-
-            $scope.dia = diasSemana[new Date().getDay()];
-            
-        });
-
-        myApp.controller("stru2Ctrl", function ($scope) {
-
-            var diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Sábado"];
-
-            
-            $scope.dia = diasSemana[(new Date().getDay() + 1) % 7];
-        });
-
-        //Es una función de factoría -> func que devuelve un objeto creado desde una segunda función(func worker)
-        myApp.directive("resaltar", function () {
-
-            //func worker
-            ///Primer parámetro scope donde esta la directiva
-            //Segundo parámetro jqLite (versión funcional muy reducida del objeto jQuery)
-            //Tercer parámetro son los atributos de la vista
-            return function (scope, element, attribute) {
-                if (scope.dia === attribute["resaltar"]) {
-                    element.css("color", "red");
-                }
-            };
-        });
+        
     </script>
 </body>
 </html>
