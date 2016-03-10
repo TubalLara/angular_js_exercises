@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html ng-app="directivasApp">
+<head>
+    <title>Directivas Angular JS</title>
+    <link href="styles/bootstrap.css" rel="stylesheet" />
+    <link href="styles/bootstrap-theme.css" rel="stylesheet" />
+    <style>
+        .odd {background-color: lightblue}
+        .even {background-color: lightcoral}
+    </style>
+</head>
+<body>
+    <div class="panel" ng-controller="directivasCtrl">
+        <h3 class="panel-heading">Listado de eventos</h3>
+
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" ng-model="lista" />
+                Ver formato lista
+            </label>
+        </div>
+
+        <ng-include src="resultados()"></ng-include>
+        <ng-include src="'tabla.html'"></ng-include>
+
+
+        <div ng-include="resultados()" onload="cambioLayout()"></div>
+    </div>
+
+
+    <script src="scripts/angular.js"></script>
+    <script>
+        angular.module("directivasApp", [])
+            .controller("directivasCtrl", function ($scope) {
+
+            $scope.eventos = [
+                { evento: "Final Fútbol", fecha: "10/05/2016" },
+                { evento: "Pasarela Cibeles", fecha: "01/04/2017" },
+                { evento: "Estreno Star Wars", fecha: "02/12/2016" },
+                { evento: "Final Futbol", fecha: "21/11/2123" }
+            ];
+
+            $scope.resultados = function () {
+                return $scope.lista ? "lista.html" : "tabla.html";
+            };
+
+            $scope.cambioLayout = function () {
+                console.log("Cargada Vista" + $scope.resultados());
+            };
+        });
+    </script>
+</body>
+</html>

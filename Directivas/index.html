@@ -70,13 +70,15 @@
 
     <script src="scripts/angular.js"></script>
     <script>
-        angular.module("directivasApp", function ($scope) {
-            $scope.eventos = [
-                { evento: "Final Fútbol", fecha: "10/05/2016" },
-                { evento: "Pasarela Cibeles", fecha: "01/04/2017" },
-                { evento: "Estreno Star Wars", fecha: "02/12/2016" },
-                { evento: "Final Futbol", fecha: "21/11/2123" }
-            ];
+        angular.module("directivasApp", [])
+             .controller("directivasCtrl", function ($scope) {
+
+                 $scope.eventos = [
+                     { evento: "Final Fútbol", fecha: "10/05/2016" },
+                     { evento: "Pasarela Cibeles", fecha: "01/04/2017" },
+                     { evento: "Estreno Star Wars", fecha: "02/12/2016" },
+                     { evento: "Final Futbol", fecha: "21/11/2123" }
+                 ];
         });
     </script>
 </body>
