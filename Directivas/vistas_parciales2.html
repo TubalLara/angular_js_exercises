@@ -16,13 +16,13 @@
 
         <div class="well">
             <div class="radio" ng-repeat="boton in ['Ninguno', 'Tabla', 'Lista']">
-                <label>
+                <label ng-cloak>
                     <input type="radio" ng-model="datos.modo" value="{{boton}}" ng-checked="$first"/>
                     {{boton}}
                 </label>
             </div>
         </div>
-        <div ng-switch on="datos.modo">
+        <div ng-switch on="datos.modo" ng-cloak>
             <div ng-switch-when="Tabla">
                 <table class="table">
                     <thead>
