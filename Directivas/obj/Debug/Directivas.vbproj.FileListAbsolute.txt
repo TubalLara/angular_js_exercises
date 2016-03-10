@@ -1,0 +1,9 @@
+C:\Users\Arranque2\Documents\Visual Studio 2013\Projects\AngularJS\Directivas\bin\Directivas.dll.config
+C:\Users\Arranque2\Documents\Visual Studio 2013\Projects\AngularJS\Directivas\bin\Directivas.dll
+C:\Users\Arranque2\Documents\Visual Studio 2013\Projects\AngularJS\Directivas\bin\Directivas.pdb
+C:\Users\Arranque2\Documents\Visual Studio 2013\Projects\AngularJS\Directivas\bin\Directivas.xml
+C:\Users\Arranque2\Documents\Visual Studio 2013\Projects\AngularJS\Directivas\obj\Debug\Directivas.Resources.resources
+C:\Users\Arranque2\Documents\Visual Studio 2013\Projects\AngularJS\Directivas\obj\Debug\Directivas.vbproj.GenerateResource.Cache
+C:\Users\Arranque2\Documents\Visual Studio 2013\Projects\AngularJS\Directivas\obj\Debug\Directivas.dll
+C:\Users\Arranque2\Documents\Visual Studio 2013\Projects\AngularJS\Directivas\obj\Debug\Directivas.xml
+C:\Users\Arranque2\Documents\Visual Studio 2013\Projects\AngularJS\Directivas\obj\Debug\Directivas.pdb
