@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html ng-app="directivasApp">
+<head>
+    <title>Directivas Angular JS</title>
+    <link href="styles/bootstrap.css" rel="stylesheet" />
+    <link href="styles/bootstrap-theme.css" rel="stylesheet" />
+    <style>
+        .odd {background-color: lightblue}
+        .even {background-color: lightcoral}
+    </style>
+</head>
+<body>
+    <div class="panel" ng-controller="directivasCtrl">
+        <h3 class="panel-heading">Listado de eventos</h3>
+
+
+        <div class="well">
+            <div class="radio" ng-repeat="boton in ['Ninguno', 'Tabla', 'Lista']">
+                <label>
+                    <input type="radio" ng-model="datos.modo" value="{{boton}}" ng-checked="$first"/>
+                    {{boton}}
+                </label>
+            </div>
+        </div>
+        <div ng-switch on="datos.modo">
+            <div ng-switch-when="Tabla">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Evento</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr ng-repeat="item in eventos" ng-class="$odd ? 'odd' : 'even'">
+                            <td>{{$index + 1}}</td>
+                            <td>{{item.evento}}</td>
+                            <td>{{item.fecha}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div ng-switch-when="Lista">
+                <ol>
+                    <li ng-repeat="item in eventos">
+                        {{item.evento}} ({{item.fecha}})
+                    </li>
+                </ol>
+
+            </div>
+            <div ng-switch-default>
+                Selecciona opción para el layout
+            </div>
+        </div>
+
+       
+    </div>
+
+
+    <script src="scripts/angular.js"></script>
+    <script>
+        angular.module("directivasApp", [])
+            .controller("directivasCtrl", function ($scope) {
+            
+
+            $scope.datos = {};
+            $scope.eventos = [
+                { evento: "Final Fútbol", fecha: "10/05/2016" },
+                { evento: "Pasarela Cibeles", fecha: "01/04/2017" },
+                { evento: "Estreno Star Wars", fecha: "02/12/2016" },
+                { evento: "Final Futbol", fecha: "21/11/2123" }
+            ];
+
+            $scope.resultados = function () {
+                return $scope.lista ? "lista.html" : "tabla.html";
+            };
+
+            $scope.cambioLayout = function () {
+                console.log("Cargada Vista" + $scope.resultados());
+            };
+        });
+    </script>
+</body>
+</html>
